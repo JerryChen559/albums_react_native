@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Linking } from "react-native";
 import Card from "./Card";
 import CardSection from "./CardSection";
+import Button from "./Button";
 
 const AlbumDetail = props => {
-  const { title, artist, thumbnail_image, image } = props.album;
+  const { title, artist, thumbnail_image, image, url } = props.album;
   const {
     thumbnailContainerStyle,
     thumbnailStyle,
@@ -29,8 +30,9 @@ const AlbumDetail = props => {
       <CardSection>
         <Image style={imageStyle} source={{ uri: image }} />
       </CardSection>
+
       <CardSection>
-        <Text>Buy Now</Text>
+        <Button pressed={() => Linking.openURL(url)}>Buy {title}</Button>
       </CardSection>
     </Card>
   );
@@ -56,7 +58,8 @@ const styles = {
   },
   imageStyle: {
     height: 300,
-    // trick to make the image expand across 100%
+    // trick to make the image expand across 100%.
+    // flex 1 says to expand to fill as much content as possible.
     flex: 1,
     width: null
   }

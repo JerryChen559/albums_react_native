@@ -65,11 +65,16 @@ export default class App extends Component<Props> {
         {/* Scroll enable: changed View to ScrollView */}
         <ScrollView>
           <AlbumList />
-          {/* <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome to React Nativeee!</Text>
-          <Text style={styles.instructions}>To get started, edit App.js</Text>
-          <Text style={styles.instructions}>{instructions}</Text>
-        </View> */}
+
+          {/* adding some space to the bottom of the app */}
+          <View>
+            <Text>
+              ''
+              {"\n"}
+              ''
+              {"\n"}
+            </Text>
+          </View>
         </ScrollView>
       </View>
     );
