@@ -49,10 +49,12 @@
 // });
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, ScrollView } from "react-native";
 
 import Header from "./src/components/Header";
 import AlbumList from "./src/components/AlbumList";
+//NOTE: working with the following api
+//https://rallycoding.herokuapp.com/api/music_albums
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -60,12 +62,15 @@ export default class App extends Component<Props> {
     return (
       <View>
         <Header headerText={"Albums"} />
-        <AlbumList />
-        {/* <View style={styles.container}>
+        {/* Scroll enable: changed View to ScrollView */}
+        <ScrollView>
+          <AlbumList />
+          {/* <View style={styles.container}>
           <Text style={styles.welcome}>Welcome to React Nativeee!</Text>
           <Text style={styles.instructions}>To get started, edit App.js</Text>
           <Text style={styles.instructions}>{instructions}</Text>
         </View> */}
+        </ScrollView>
       </View>
     );
   }
